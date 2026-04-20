@@ -3,26 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jersey Swim School</title>
+    <title>Jersey Aquatic Swim School</title>
     <meta
       name="description"
-      content="Jersey Swim School helps kids train like swimmers through structured progression, modern coaching, and confidence-building lessons."
+      content="Jersey Aquatic Swim School helps kids train like swimmers through structured progression, modern coaching, and confidence-building lessons."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <style>
       :root {
-        --navy: #1f2a37;
-        --teal: #4fd1c5;
-        --teal-soft: #a7f3d0;
-        --white: #ffffff;
-        --gray-bg: #f7f9fb;
-        --gray-text: #6b7280;
-        --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+        --navy: #102b47;
+        --navy-soft: #27435d;
+        --teal: #64d2c6;
+        --teal-deep: #3cbeb1;
+        --mint: #e9faf7;
+        --bg-soft: #f5f8f9;
+        --line: #d8e3ea;
+        --text-muted: #5f6f7f;
         --container: 1120px;
-        --radius-card: 14px;
-        --radius-image: 20px;
+        --radius-lg: 22px;
+        --radius-md: 16px;
       }
 
       * {
@@ -38,341 +39,293 @@
       body {
         font-family: "Inter", "SF Pro Text", "SF Pro Display", -apple-system, "Segoe UI", sans-serif;
         color: var(--navy);
-        background: var(--white);
-        line-height: 1.55;
+        background: #fff;
       }
 
       img {
-        display: block;
         max-width: 100%;
+        display: block;
       }
 
       .container {
-        width: min(var(--container), calc(100% - 48px));
+        width: min(var(--container), calc(100% - 52px));
         margin: 0 auto;
       }
 
-      .section {
-        padding: 96px 0;
-      }
-
-      .section-gray {
-        background: var(--gray-bg);
-      }
-
-      .eyebrow {
-        margin: 0;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: #22b7aa;
-      }
-
-      .section-header {
-        max-width: 760px;
-        margin: 0 auto 42px;
-        text-align: center;
-      }
-
-      .section-header h2 {
-        margin: 10px 0 0;
-        font-size: clamp(30px, 3vw, 36px);
-        line-height: 1.15;
-      }
-
-      .section-header p {
-        margin: 14px auto 0;
-        max-width: 58ch;
-        font-size: 16px;
-        color: var(--gray-text);
-      }
-
       .site-header {
-        padding: 20px 0 10px;
-      }
-
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-        padding: 14px 22px;
-        border: 1px solid #e5eaee;
-        border-radius: 999px;
-        background: #fff;
-        box-shadow: var(--shadow-soft);
+        padding: 26px 0 8px;
       }
 
       .brand {
         display: inline-flex;
         align-items: center;
-        gap: 12px;
+        gap: 14px;
         text-decoration: none;
-        color: var(--navy);
+        color: inherit;
       }
 
       .brand-mark {
-        width: 38px;
-        height: 38px;
-        border-radius: 11px;
-        background: linear-gradient(145deg, #defbf2 0%, var(--teal) 100%);
-        display: grid;
-        place-items: center;
-        font-size: 20px;
-        font-weight: 800;
+        width: 68px;
+        height: 44px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 20% 80%, var(--teal) 0 32%, transparent 34%),
+          linear-gradient(160deg, #173451 15%, #0f2a45 60%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .brand-mark::after {
+        content: "";
+        position: absolute;
+        inset: 17px -4px 8px 18px;
+        border-radius: 999px;
+        background: #fff;
+        opacity: 0.9;
+        transform: rotate(-9deg);
       }
 
       .brand-copy {
-        line-height: 1.1;
+        line-height: 1;
       }
 
       .brand-copy strong {
         display: block;
-        font-size: 14px;
-        letter-spacing: 0.08em;
+        font-size: clamp(20px, 2.6vw, 28px);
+        letter-spacing: 0.02em;
+        font-weight: 800;
       }
 
       .brand-copy span {
-        font-size: 12px;
-        color: var(--gray-text);
+        display: block;
+        margin-top: 6px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--teal-deep);
+        font-size: clamp(12px, 1.4vw, 16px);
+        font-weight: 700;
       }
 
-      .nav-links {
+      .hero {
+        padding: 10px 0 0;
+      }
+
+      .hero-shell {
+        display: grid;
+        grid-template-columns: 1.03fr 1fr;
+        align-items: stretch;
+        border-radius: 26px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .hero-copy {
+        padding: 26px 22px 52px 4px;
+      }
+
+      h1 {
+        margin: 16px 0 0;
+        font-size: clamp(44px, 6.2vw, 76px);
+        line-height: 0.98;
+        letter-spacing: -0.03em;
+      }
+
+      .accent {
+        color: var(--teal-deep);
+      }
+
+      .hero-lead {
+        margin: 20px 0 0;
+        font-size: clamp(28px, 3vw, 40px);
+        line-height: 1.17;
+        font-weight: 700;
+      }
+
+      .hero-text {
+        margin: 18px 0 0;
+        max-width: 44ch;
+        color: var(--text-muted);
+        font-size: 24px;
+      }
+
+      .hero-actions {
+        margin-top: 34px;
         display: flex;
-        align-items: center;
-        gap: 26px;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: #354252;
-        font-size: 15px;
-        font-weight: 500;
+        gap: 14px;
+        flex-wrap: wrap;
       }
 
       .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
+        min-height: 56px;
+        padding: 0 34px;
         border-radius: 999px;
-        padding: 12px 24px;
-        font-size: 15px;
-        font-weight: 600;
         text-decoration: none;
-        border: 1px solid transparent;
-        transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
-      }
-
-      .btn:hover {
-        transform: scale(1.02);
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-size: 14px;
+        border: 1.5px solid transparent;
       }
 
       .btn-primary {
         background: var(--teal);
         color: var(--navy);
-        box-shadow: 0 6px 16px rgba(79, 209, 197, 0.32);
-      }
-
-      .btn-primary:hover {
-        background: #44c3b7;
       }
 
       .btn-secondary {
-        background: #fff;
-        border-color: var(--navy);
+        border-color: #5e7186;
         color: var(--navy);
       }
 
-      .btn-secondary:hover {
-        box-shadow: var(--shadow-soft);
-      }
-
-      .hero {
-        padding: 34px 0 84px;
-      }
-
-      .hero-shell {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 42px;
-      }
-
-      .hero h1 {
-        margin: 10px 0 0;
-        font-size: clamp(46px, 6vw, 64px);
-        line-height: 1.04;
-        letter-spacing: -0.02em;
-      }
-
-      .hero h1 .accent {
-        color: var(--teal);
-      }
-
-      .hero p {
-        max-width: 50ch;
-        margin: 16px 0 0;
-        color: var(--gray-text);
-        font-size: clamp(15px, 2vw, 18px);
-      }
-
-      .hero-actions {
-        margin-top: 30px;
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      .hero-stats {
-        margin-top: 26px;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(100px, 1fr));
-        gap: 12px;
-        max-width: 560px;
-      }
-
-      .hero-stats article {
-        background: var(--gray-bg);
-        border-radius: 12px;
-        padding: 12px 14px;
-      }
-
-      .hero-stats strong {
-        display: block;
-        font-size: 20px;
-        line-height: 1.1;
-      }
-
-      .hero-stats span {
-        font-size: 13px;
-        color: var(--gray-text);
-      }
-
       .hero-media {
-        border-radius: var(--radius-image);
-        overflow: hidden;
-        box-shadow: var(--shadow-soft);
-        min-height: 520px;
+        min-height: 560px;
       }
 
       .hero-media img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center;
+      }
+
+      .section {
+        padding: 74px 0;
+      }
+
+      .section-gray {
+        background: var(--bg-soft);
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 34px;
+      }
+
+      .eyebrow {
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--teal-deep);
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .section-header h2 {
+        margin: 10px auto 0;
+        font-size: clamp(36px, 4vw, 56px);
+        line-height: 1.1;
+        max-width: 20ch;
       }
 
       .feature-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 22px;
+        gap: 0;
+        background: #fff;
+        border-radius: var(--radius-md);
       }
 
       .feature {
-        background: #fff;
-        border-radius: var(--radius-card);
-        padding: 28px 22px;
-        box-shadow: var(--shadow-soft);
+        padding: 26px 30px 22px;
+        text-align: center;
+      }
+
+      .feature + .feature {
+        border-left: 1px solid var(--line);
       }
 
       .icon-wrap {
-        width: 56px;
-        height: 56px;
+        width: 108px;
+        height: 108px;
+        margin: 0 auto;
         border-radius: 999px;
-        background: #e8fbf6;
+        background: #eaf7f6;
         display: grid;
         place-items: center;
       }
 
       .icon-wrap svg {
-        width: 28px;
-        height: 28px;
+        width: 50px;
+        height: 50px;
         stroke: var(--navy);
         stroke-width: 1.8;
         fill: none;
       }
 
-      .icon-wrap .icon-accent {
-        fill: var(--teal);
-        stroke: none;
-      }
-
       .feature h3 {
-        margin: 16px 0 8px;
-        font-size: 22px;
-        line-height: 1.2;
+        margin: 16px 0 10px;
+        font-size: 32px;
       }
 
       .feature p {
         margin: 0;
-        font-size: 15px;
-        color: var(--gray-text);
+        color: var(--text-muted);
+        font-size: 20px;
+        line-height: 1.45;
       }
 
       .process-row {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 14px;
-        align-items: stretch;
+        gap: 18px;
       }
 
       .process-card {
-        background: #f9fcfe;
-        border-radius: var(--radius-card);
+        background: #fff;
+        border-radius: var(--radius-md);
         padding: 22px 16px;
         text-align: center;
-        box-shadow: var(--shadow-soft);
+        border: 1px solid #edf2f5;
         position: relative;
       }
 
       .process-card::after {
-        content: "";
+        content: "\2192";
         position: absolute;
+        right: -16px;
         top: 50%;
-        right: -14px;
-        width: 14px;
-        height: 1px;
-        background: #c9d3dd;
+        transform: translateY(-50%);
+        color: #8aa0b5;
+        font-size: 24px;
+        font-weight: 700;
       }
 
       .process-card:last-child::after {
-        display: none;
+        content: "";
       }
 
       .process-icon {
-        width: 52px;
-        height: 52px;
+        width: 92px;
+        height: 92px;
         border-radius: 999px;
         margin: 0 auto;
-        background: var(--teal-soft);
+        background: #eef8f7;
         display: grid;
         place-items: center;
       }
 
       .process-card h3 {
-        margin: 14px 0 8px;
-        font-size: 19px;
+        margin: 12px 0 8px;
+        font-size: 25px;
       }
 
       .process-card p {
         margin: 0;
-        font-size: 14px;
-        color: var(--gray-text);
+        color: var(--text-muted);
+        font-size: 18px;
       }
 
       .proof-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 22px;
+        gap: 18px;
+        grid-template-columns: 1fr 1fr 0.88fr;
       }
 
       .proof-image {
-        border-radius: var(--radius-image);
+        border-radius: var(--radius-lg);
         overflow: hidden;
-        box-shadow: var(--shadow-soft);
-        min-height: 420px;
+        min-height: 280px;
       }
 
       .proof-image img {
@@ -382,83 +335,65 @@
       }
 
       .testimonial {
-        background: linear-gradient(155deg, #effdfa, #f3f7fb);
-        border-radius: 16px;
-        padding: 30px;
-        box-shadow: var(--shadow-soft);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        background: #e8f7f4;
+        border-radius: var(--radius-lg);
+        padding: 28px;
       }
 
       .quote-mark {
         margin: 0;
-        font-size: 42px;
-        color: #39b8ad;
+        color: var(--teal-deep);
+        font-size: 68px;
         line-height: 1;
       }
 
-      .testimonial blockquote {
+      blockquote {
         margin: 8px 0 0;
-        font-style: italic;
-        color: #2f3f53;
-        font-size: 16px;
+        font-size: 20px;
+        color: var(--navy-soft);
+        line-height: 1.46;
       }
 
-      .testimonial cite {
-        margin-top: 18px;
-        font-style: normal;
-        font-size: 13px;
+      cite {
+        display: block;
+        margin-top: 16px;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--gray-text);
-      }
-
-      .cta {
-        margin-top: 26px;
-      }
-
-      .cta-panel {
-        background: #fff;
-        border-radius: 18px;
-        border: 1px solid #d9e2ea;
-        box-shadow: var(--shadow-soft);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        padding: 28px;
-      }
-
-      .cta-panel h3 {
-        margin: 0;
-        font-size: clamp(26px, 3vw, 34px);
-      }
-
-      .cta-panel p {
-        margin: 8px 0 0;
-        color: var(--gray-text);
+        letter-spacing: 0.14em;
+        font-style: normal;
+        font-size: 16px;
+        color: var(--teal-deep);
+        font-weight: 700;
       }
 
       .footer {
-        padding: 34px 0 44px;
-        font-size: 14px;
-        color: var(--gray-text);
+        padding: 34px 0;
+        text-align: center;
+        color: #6d8192;
       }
 
-      @media (max-width: 1040px) {
-        .nav-links {
-          display: none;
-        }
-
+      @media (max-width: 1050px) {
         .hero-shell,
         .proof-grid {
           grid-template-columns: 1fr;
         }
 
-        .hero-media,
-        .proof-image {
-          min-height: 360px;
+        .hero-copy {
+          padding: 10px 0 30px;
+        }
+
+        .hero-media {
+          min-height: 390px;
+          border-radius: var(--radius-lg);
+          overflow: hidden;
+        }
+
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .feature + .feature {
+          border-left: 0;
+          border-top: 1px solid var(--line);
         }
 
         .process-row {
@@ -466,214 +401,158 @@
         }
 
         .process-card::after {
-          display: none;
-        }
-
-        .cta-panel {
-          flex-direction: column;
-          align-items: flex-start;
+          content: "";
         }
       }
 
-      @media (max-width: 720px) {
+      @media (max-width: 760px) {
         .container {
           width: min(var(--container), calc(100% - 32px));
         }
 
         .section {
-          padding: 72px 0;
+          padding: 56px 0;
         }
 
-        .feature-grid,
         .process-row {
           grid-template-columns: 1fr;
         }
 
-        .hero-stats {
-          grid-template-columns: 1fr;
-          max-width: 320px;
+        .hero-actions {
+          flex-direction: column;
+        }
+
+        .btn {
+          width: 100%;
         }
       }
     </style>
   </head>
   <body>
     <header class="site-header container">
-      <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="#top">
-          <span class="brand-mark" aria-hidden="true">J</span>
-          <span class="brand-copy">
-            <strong>JERSEY SWIM</strong>
-            <span>School</span>
-          </span>
-        </a>
-        <div class="nav-links">
-          <a href="#difference">Why Us</a>
-          <a href="#process">Process</a>
-          <a href="#stories">Stories</a>
-        </div>
-        <a class="btn btn-primary" href="#cta">Book Assessment</a>
-      </nav>
+      <a class="brand" href="#top" aria-label="Jersey Aquatic Swim School home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-copy">
+          <strong>JERSEY AQUATIC</strong>
+          <span>Swim School</span>
+        </span>
+      </a>
     </header>
 
     <main id="top">
-      <section class="hero section">
+      <section class="hero">
         <div class="container hero-shell">
-          <div>
-            <p class="eyebrow">Performance-based swim development</p>
-            <h1>Train Like <span class="accent">a Swimmer.</span></h1>
-            <p>
-              More than lessons. We help young athletes build confidence, clean technique, and the fitness needed for
-              long-term progress in and out of the pool.
-            </p>
+          <div class="hero-copy">
+            <h1>Train Like<br /><span class="accent">a Swimmer.</span></h1>
+            <p class="hero-lead">Real technique. Stronger swimmers. Ready for competition.</p>
+            <p class="hero-text">We teach kids the skills, discipline, and confidence to succeed in the pool and beyond.</p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#cta">Start Your Journey</a>
-              <a class="btn btn-secondary" href="#difference">See Programs</a>
-            </div>
-            <div class="hero-stats" aria-label="School highlights">
-              <article>
-                <strong>4-Step</strong>
-                <span>Progression Framework</span>
-              </article>
-              <article>
-                <strong>Small</strong>
-                <span>Coach-to-Swimmer Groups</span>
-              </article>
-              <article>
-                <strong>Year-Round</strong>
-                <span>Consistent Skill Growth</span>
-              </article>
+              <a class="btn btn-primary" href="#process">View Programs</a>
+              <a class="btn btn-secondary" href="#stories">Book an Evaluation</a>
             </div>
           </div>
           <div class="hero-media">
-            <img src="swimming.png" alt="Kids swimming with coach supervision" />
+            <img src="group.png" alt="Kids lined up smiling in the pool" />
           </div>
         </div>
       </section>
 
-      <section class="section section-gray" id="difference">
+      <section class="section" id="difference">
         <div class="container">
           <header class="section-header">
-            <p class="eyebrow">What makes us different</p>
-            <h2>More Than Lessons</h2>
-            <p>
-              A modern youth swim school blending friendly coaching with athletic standards, so each swimmer develops
-              confidence and race-ready habits.
-            </p>
+            <p class="eyebrow">What makes us different?</p>
+            <h2>More Than Lessons. Real Progress.</h2>
           </header>
           <div class="feature-grid">
             <article class="feature">
               <div class="icon-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img" aria-label="Technique icon">
-                  <circle cx="12" cy="12" r="8"></circle>
-                  <circle class="icon-accent" cx="12" cy="12" r="2.5"></circle>
+                <svg viewBox="0 0 24 24">
+                  <ellipse cx="12" cy="13" rx="7" ry="5"></ellipse>
+                  <path d="M5 13h14"></path>
                 </svg>
               </div>
               <h3>Technique First</h3>
-              <p>
-                Every class reinforces body position, breathing rhythm, and stroke mechanics so swimmers improve with
-                efficient movement patterns from the start.
-              </p>
+              <p>Proper form from day one builds faster, stronger swimmers.</p>
             </article>
             <article class="feature">
               <div class="icon-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img" aria-label="Progress icon">
-                  <path d="M4 16l5-5 3 3 7-7"></path>
-                  <path d="M15 7h4v4"></path>
-                  <circle class="icon-accent" cx="9" cy="11" r="2"></circle>
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="7"></circle>
+                  <path d="M12 12V8"></path>
+                  <path d="M12 4V2"></path>
                 </svg>
               </div>
-              <h3>Visible Progress</h3>
-              <p>
-                Clear skill checkpoints and simple parent updates make advancement transparent. You always know what
-                your swimmer is mastering next.
-              </p>
+              <h3>Built for Competition</h3>
+              <p>We develop the skills and mindset to race with confidence.</p>
             </article>
             <article class="feature">
               <div class="icon-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img" aria-label="Performance icon">
-                  <path d="M5 14c2.8-4.8 8.2-5.6 14-3.2"></path>
-                  <path d="M4 18h16"></path>
-                  <circle class="icon-accent" cx="17.5" cy="11.2" r="2.2"></circle>
+                <svg viewBox="0 0 24 24">
+                  <path d="M6 19h12"></path>
+                  <path d="M8 7h8l-1.5 6h-5z"></path>
+                  <path d="M10 7V5h4v2"></path>
                 </svg>
               </div>
-              <h3>Athletic Confidence</h3>
-              <p>
-                We blend playful energy with disciplined coaching so swimmers build confidence under pressure and move
-                into meets feeling prepared.
-              </p>
+              <h3>Measurable Progress</h3>
+              <p>Clear levels, real goals, and swimmers you can see improving.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="process">
+      <section class="section section-gray" id="process">
         <div class="container">
           <header class="section-header">
-            <p class="eyebrow">Our development path</p>
-            <h2>From First Splashes to Race Readiness</h2>
-            <p>Each stage has specific outcomes and a clear next step, so training always feels focused and motivating.</p>
+            <p class="eyebrow">Our training progression</p>
+            <h2>From First Stroke to Race Ready.</h2>
           </header>
           <div class="process-row" aria-label="Four-step swim progression">
             <article class="process-card">
-              <div class="process-icon" aria-hidden="true">1</div>
-              <h3>Water Confidence</h3>
-              <p>Comfort, safety, and breath control in a supportive environment.</p>
+              <div class="process-icon" aria-hidden="true">🏊</div>
+              <h3>Foundations</h3>
+              <p>Build confidence &amp; water skills.</p>
             </article>
             <article class="process-card">
-              <div class="process-icon" aria-hidden="true">2</div>
-              <h3>Stroke Building</h3>
-              <p>Freestyle and backstroke foundations with clean movement patterns.</p>
+              <div class="process-icon" aria-hidden="true">🌊</div>
+              <h3>Stroke Development</h3>
+              <p>Master technique &amp; efficiency.</p>
             </article>
             <article class="process-card">
-              <div class="process-icon" aria-hidden="true">3</div>
-              <h3>Strength & Pace</h3>
-              <p>Conditioning and tempo work that builds endurance and control.</p>
+              <div class="process-icon" aria-hidden="true">🥤</div>
+              <h3>Endurance Training</h3>
+              <p>Build strength, speed &amp; stamina.</p>
             </article>
             <article class="process-card">
-              <div class="process-icon" aria-hidden="true">4</div>
-              <h3>Race Skills</h3>
-              <p>Starts, turns, pacing, and confidence for meet-day performance.</p>
+              <div class="process-icon" aria-hidden="true">🏁</div>
+              <h3>Race Prep</h3>
+              <p>Sharpen skills &amp; compete.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section-gray" id="stories">
+      <section class="section" id="stories">
         <div class="container">
-          <header class="section-header">
-            <p class="eyebrow">Social proof</p>
-            <h2>Families Feel the Difference</h2>
-          </header>
           <div class="proof-grid">
             <div class="proof-image">
-              <img src="group.png" alt="Youth swimmers smiling poolside" />
+              <img src="swimming.png" alt="Swimmer training in a lane" />
             </div>
             <div class="proof-image">
-              <img src="swimmers.png" alt="Young swimmers training together in the pool" />
+              <img src="group.png" alt="Team of young swimmers smiling together" />
             </div>
             <aside class="testimonial" aria-label="Parent testimonial">
               <p class="quote-mark" aria-hidden="true">“</p>
               <blockquote>
-                The coaching style is warm, organized, and performance-focused. In one season our son became stronger,
-                more technical, and genuinely excited to train every week.
+                The coaches focus on technique and push the kids in the best way. We’ve seen huge progress and our
+                swimmer loves it.
               </blockquote>
-              <cite>Jersey Swim Parent</cite>
+              <cite>Jersey Aquatic Parent</cite>
             </aside>
-          </div>
-
-          <div class="cta" id="cta">
-            <div class="cta-panel">
-              <div>
-                <h3>Ready for Your Swimmer’s Next Level?</h3>
-                <p>Book an assessment and get a personalized recommendation from our coaching team.</p>
-              </div>
-              <a class="btn btn-primary" href="#top">Book Now</a>
-            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer container">© 2026 Jersey Swim School. All rights reserved.</footer>
+    <footer class="footer container">© 2026 Jersey Aquatic Swim School. All rights reserved.</footer>
   </body>
 </html>
