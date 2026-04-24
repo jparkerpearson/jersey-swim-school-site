@@ -159,7 +159,7 @@
       table {
         width: 100%;
         border-collapse: collapse;
-        min-width: 900px;
+        min-width: 1080px;
         background: #fff;
       }
 
@@ -182,9 +182,46 @@
         border-bottom: 0;
       }
 
+      .col-class {
+        width: 22%;
+      }
+
+      .col-approx-age {
+        width: 16%;
+      }
+
+      .class-name {
+        white-space: nowrap;
+        font-weight: 700;
+      }
+
       .level {
         font-weight: 700;
         color: var(--navy-soft);
+      }
+
+      tr.group-kindy td {
+        background: #eff4f8;
+      }
+
+      tr.group-jellyfish td {
+        background: #e8f3ff;
+      }
+
+      tr.group-sharks td {
+        background: #dcecff;
+      }
+
+      tr.group-sea-otters td {
+        background: #e3ebf3;
+      }
+
+      tr.group-swordfish td {
+        background: #d4e4f6;
+      }
+
+      tr.group-adults td {
+        background: #edf2f6;
       }
 
       .private-card {
@@ -248,8 +285,7 @@
       <section class="hero">
         <h1>Class Descriptions</h1>
         <p>
-          Find the best fit by age, experience, and current skills. Every class focuses on water safety,
-          confidence, strong technique, and measurable progress.
+          Every class focuses on water safety, confidence, strong technique, and measurable progress.
         </p>
       </section>
 
@@ -257,90 +293,93 @@
         <h2 class="section-title">Group Lesson Levels</h2>
         <div class="table-wrap">
           <table aria-label="Jersey Aquatic class descriptions">
+            <colgroup>
+              <col class="col-class" />
+              <col class="col-approx-age" />
+              <col />
+              <col />
+            </colgroup>
             <thead>
               <tr>
-                <th>Group</th>
                 <th>Class</th>
-                <th>Age</th>
+                <th>Approx Age</th>
                 <th>Prerequisite</th>
                 <th>Description</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr class="group-kindy">
+                <td class="class-name">Turtle Tots</td>
                 <td class="level">Kindergarten &amp; Under</td>
-                <td>Turtle Tots</td>
-                <td>6 months-2 years</td>
                 <td>No prerequisite</td>
                 <td>
-                  Parent and child experience an active 30-minute, instructor-guided class. Focus areas include comfort
-                  on and under water, bubble blowing, floating, body position, balance, and propulsive kicks.
+                  Parent and child experience an active 30-minute, instructor-guided class.<br />
+                  Focus areas include comfort on and under water, bubble blowing, floating, body position, balance,
+                  and propulsive kicks.
                 </td>
               </tr>
-              <tr>
+              <tr class="group-kindy">
+                <td class="class-name">Minnows 1</td>
                 <td class="level">Kindergarten &amp; Under</td>
-                <td>Minnows 1</td>
-                <td>3-K</td>
                 <td>No prerequisite</td>
                 <td>
                   For students new to water who have not fully submerged or cannot kick on their back 50 feet using a
-                  propulsive kick. Includes kicking front/back, sculling, rotary breathing, and arm strokes.
+                  propulsive kick.<br />
+                  Includes kicking front/back, sculling, rotary breathing, and arm strokes.
                 </td>
               </tr>
-              <tr>
+              <tr class="group-kindy">
+                <td class="class-name">Minnows 2</td>
                 <td class="level">Kindergarten &amp; Under</td>
-                <td>Minnows 2</td>
-                <td>3-K</td>
                 <td>Comfortable in water, face in, and kicking on back</td>
                 <td>
                   Students pass Minnows 1 skills and continue with stronger flutter kicks (front/back), bilateral
                   breathing, breaststroke kicking, and drills for balanced body position.
                 </td>
               </tr>
-              <tr>
+              <tr class="group-kindy">
+                <td class="class-name">Minnows 3</td>
                 <td class="level">Kindergarten &amp; Under</td>
-                <td>Minnows 3</td>
-                <td>3-K</td>
                 <td>Freestyle and backstroke</td>
                 <td>
-                  For swimmers already performing freestyle with propulsive kicks and bilateral breathing. Adds
+                  For swimmers already performing freestyle with propulsive kicks and bilateral breathing.<br />
+                  Adds
                   elementary backstroke, somersaults, and drills for breaststroke and butterfly.
                 </td>
               </tr>
-              <tr>
+              <tr class="group-jellyfish">
+                <td class="class-name">Jellyfish 1</td>
                 <td class="level">9 &amp; Under</td>
-                <td>Jellyfish 1</td>
-                <td>1st grade-9 years</td>
                 <td>No prerequisite</td>
                 <td>
                   For students new to water who have not fully submerged or cannot kick on their back 50 feet using a
-                  propulsive kick. Includes kicking front/back, sculling, rotary breathing, and arm strokes.
+                  propulsive kick.<br />
+                  Includes kicking front/back, sculling, rotary breathing, and arm strokes.
                 </td>
               </tr>
-              <tr>
+              <tr class="group-jellyfish">
+                <td class="class-name">Jellyfish 2</td>
                 <td class="level">9 &amp; Under</td>
-                <td>Jellyfish 2</td>
-                <td>1st grade-9 years</td>
                 <td>Comfortable kicking/sculling on back and rotary breathing on front</td>
                 <td>
-                  Students pass Jellyfish 1 skills. Focus on strong propulsive flutter kicks, bilateral breathing,
+                  Students pass Jellyfish 1 skills.<br />
+                  Focus on strong propulsive flutter kicks, bilateral breathing,
                   breaststroke kicking, and drills for balanced body position.
                 </td>
               </tr>
-              <tr>
+              <tr class="group-jellyfish">
+                <td class="class-name">Jellyfish 3</td>
                 <td class="level">9 &amp; Under</td>
-                <td>Jellyfish 3</td>
-                <td>1st grade-9 years</td>
                 <td>Freestyle and backstroke</td>
                 <td>
-                  For swimmers already performing freestyle with propulsive kicks and bilateral breathing. Adds
+                  For swimmers already performing freestyle with propulsive kicks and bilateral breathing.<br />
+                  Adds
                   elementary backstroke, somersaults, and drills for breaststroke and butterfly.
                 </td>
               </tr>
-              <tr>
+              <tr class="group-sharks">
+                <td class="class-name">Sharks</td>
                 <td class="level">9 &amp; Under</td>
-                <td>Sharks</td>
-                <td>9 &amp; under</td>
                 <td>
                   Strong/proper freestyle and backstroke, legal breaststroke kick and dolphin kick for 200 feet each
                   without stopping
@@ -350,31 +389,28 @@
                   drills for strength and endurance.
                 </td>
               </tr>
-              <tr>
+              <tr class="group-sea-otters">
+                <td class="class-name">Sea Otters 1</td>
                 <td class="level">10 &amp; Over</td>
-                <td>Sea Otters 1</td>
-                <td>10 &amp; over</td>
                 <td>No prerequisite</td>
                 <td>
-                  Students may be new to water or still learning breath control, balance, and propulsive kicks.
+                  Students may be new to water or still learning breath control, balance, and propulsive kicks.<br />
                   Includes kicking front/back, sculling, bilateral breathing, arm strokes, elementary backstroke, and
                   drills for balanced body position.
                 </td>
               </tr>
-              <tr>
+              <tr class="group-sea-otters">
+                <td class="class-name">Sea Otters 2</td>
                 <td class="level">10 &amp; Over</td>
-                <td>Sea Otters 2</td>
-                <td>10 &amp; over</td>
                 <td>Freestyle and backstroke</td>
                 <td>
-                  For swimmers already doing freestyle with propulsive kicks and bilateral breathing. Adds breaststroke
-                  kicking, dolphin kicking, somersaults, and refinement of backstroke and freestyle.
+                  For swimmers already doing freestyle with propulsive kicks and bilateral breathing.<br />
+                  Adds breaststroke kicking, dolphin kicking, somersaults, and refinement of backstroke and freestyle.
                 </td>
               </tr>
-              <tr>
+              <tr class="group-swordfish">
+                <td class="class-name">Swordfish</td>
                 <td class="level">10 &amp; Over</td>
-                <td>Swordfish</td>
-                <td>10 &amp; over</td>
                 <td>
                   Strong/proper freestyle and backstroke, legal breaststroke kick and dolphin kick for 200 feet each
                   without stopping
@@ -384,10 +420,9 @@
                   drills for strength and endurance.
                 </td>
               </tr>
-              <tr>
+              <tr class="group-adults">
+                <td class="class-name">Adult Levels</td>
                 <td class="level">Adults</td>
-                <td>Adult Levels</td>
-                <td>15+</td>
                 <td>Any level welcome</td>
                 <td>
                   Activities focus on body position, breathing, and kicking, which lead into stroke building and
