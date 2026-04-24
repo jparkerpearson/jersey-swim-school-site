@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ | Jersey Aquatic Swim School</title>
+    <title>Progression | Jersey Aquatic Swim School</title>
     <meta
       name="description"
-      content="Frequently asked questions about Jersey Aquatic Swim School programs, scheduling, and enrollment."
+      content="See the Jersey Aquatic training progression from first skills to race readiness."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -59,27 +59,50 @@
       .btn-primary { color: #fff; background: var(--primary); }
       .btn-primary:hover { background: var(--primary-dark); }
 
-      .hero { padding: 54px 0 44px; }
+      .hero { padding: 54px 0 38px; }
       .hero-shell { border-radius: 24px; background: var(--muted); padding: 40px; }
       .hero h1 { font-size: clamp(42px, 6vw, 72px); margin-bottom: 12px; }
       .hero p { color: var(--muted-foreground); font-size: 20px; max-width: 58ch; }
 
-      .section { padding: 20px 0 60px; }
-      .faq-grid { display: grid; gap: 18px; }
-      .faq-card {
+      .section { padding: 34px 0 72px; }
+      .step-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-bottom: 28px; }
+
+      .step {
         background: #fff;
         border: 1px solid var(--border);
         border-radius: 16px;
-        box-shadow: var(--shadow);
         padding: 22px;
+        box-shadow: var(--shadow);
       }
 
-      .faq-card h2 { font-size: 32px; margin-bottom: 16px; }
+      .step-num {
+        width: 50px;
+        height: 50px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        color: var(--primary);
+        border: 3px solid var(--primary);
+        font-family: "Outfit", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
 
-      table { width: 100%; border-collapse: collapse; }
-      th, td { text-align: left; padding: 14px 0; border-bottom: 1px solid var(--border); vertical-align: top; }
-      th { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted-foreground); }
-      td:first-child { width: 34%; font-weight: 600; padding-right: 16px; }
+      .step h3 { font-size: 24px; margin-bottom: 8px; }
+      .step p { color: var(--muted-foreground); }
+
+      .table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      table { width: 100%; border-collapse: collapse; min-width: 860px; }
+      th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+      th { background: #edf7fb; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
       tr:last-child td { border-bottom: 0; }
 
       .footer {
@@ -96,15 +119,12 @@
 
       @media (max-width: 1080px) {
         .nav-links, .nav-cta .btn-outline { display: none; }
-        .footer-grid { grid-template-columns: 1fr; }
-        td:first-child { width: 42%; }
+        .step-grid, .footer-grid { grid-template-columns: 1fr; }
       }
 
       @media (max-width: 740px) {
         .container { width: min(var(--container), calc(100% - 32px)); }
         .hero-shell { padding: 24px; }
-        td:first-child { width: 100%; display: block; padding-bottom: 8px; }
-        td:last-child { display: block; }
       }
     </style>
   </head>
@@ -121,8 +141,8 @@
         </a>
         <nav class="nav-links" aria-label="Primary navigation">
           <a href="classes.html">Classes</a>
-          <a href="progression.html">Progression</a>
-          <a href="faq.html" aria-current="page">FAQ</a>
+          <a href="progression.html" aria-current="page">Progression</a>
+          <a href="faq.html">FAQ</a>
         </nav>
         <div class="nav-cta">
           <a class="btn btn-outline" href="faq.html">Login</a>
@@ -134,57 +154,69 @@
     <main>
       <section class="hero">
         <div class="container hero-shell">
-          <h1>Frequently Asked Questions</h1>
-          <p>Quick answers about classes, enrollment, scheduling, makeups, and billing.</p>
+          <h1>Training Progression</h1>
+          <p>A structured path from first skills to race confidence, with clear milestones at each stage.</p>
         </div>
       </section>
 
       <section class="section">
-        <div class="container faq-grid">
-          <article class="faq-card">
-            <h2>Programs &amp; Placement</h2>
-            <table aria-label="Programs and placement FAQ">
-              <thead>
-                <tr><th>Question</th><th>Answer</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>What ages do you teach?</td><td>From 6 months through adults, with level-based tracks.</td></tr>
-                <tr><td>How do I pick the right level?</td><td>Start with a free level assessment and coach recommendation.</td></tr>
-                <tr><td>Do you offer trial classes?</td><td>Yes, one free trial class is available for new swimmers.</td></tr>
-                <tr><td>Are private lessons available?</td><td>Yes, private and semi-private options are offered based on schedule availability.</td></tr>
-              </tbody>
-            </table>
-          </article>
+        <div class="container">
+          <div class="step-grid" aria-label="Progression stages">
+            <article class="step">
+              <div class="step-num">1</div>
+              <h3>Foundations</h3>
+              <p>Water comfort, breathing rhythm, and balanced body position.</p>
+            </article>
+            <article class="step">
+              <div class="step-num">2</div>
+              <h3>Stroke Dev</h3>
+              <p>Freestyle/backstroke patterns and coordinated stroke timing.</p>
+            </article>
+            <article class="step">
+              <div class="step-num">3</div>
+              <h3>Endurance</h3>
+              <p>Longer repeats, pace awareness, and consistent technique under effort.</p>
+            </article>
+            <article class="step">
+              <div class="step-num">4</div>
+              <h3>Race Prep</h3>
+              <p>Starts, turns, breakouts, and confidence for competition pathways.</p>
+            </article>
+          </div>
 
-          <article class="faq-card">
-            <h2>Scheduling &amp; Enrollment</h2>
-            <table aria-label="Scheduling and enrollment FAQ">
+          <div class="table-wrap">
+            <table aria-label="Progression benchmark table">
               <thead>
-                <tr><th>Question</th><th>Answer</th></tr>
+                <tr>
+                  <th>Stage</th>
+                  <th>Benchmarks</th>
+                  <th>Coach Focus</th>
+                </tr>
               </thead>
               <tbody>
-                <tr><td>How long are lessons?</td><td>Most group lessons are 30 minutes; select clinic tracks are longer.</td></tr>
-                <tr><td>Can I join mid-session?</td><td>Yes, rolling enrollment is available with prorated billing when applicable.</td></tr>
-                <tr><td>Can we switch levels or times?</td><td>Yes, transfers can be requested and are confirmed based on availability and level fit.</td></tr>
-                <tr><td>What if the facility closes?</td><td>Affected lessons are credited or made up according to center policy.</td></tr>
+                <tr>
+                  <td><strong>Foundations</strong></td>
+                  <td>Comfortable submersion, body line control, stable kick pattern.</td>
+                  <td>Safety habits, confidence, repeatable form.</td>
+                </tr>
+                <tr>
+                  <td><strong>Stroke Dev</strong></td>
+                  <td>Rhythmic breathing and cleaner freestyle/backstroke mechanics.</td>
+                  <td>Timing, streamline, efficient propulsion.</td>
+                </tr>
+                <tr>
+                  <td><strong>Endurance</strong></td>
+                  <td>Sustained technique over sets with reduced breakdown.</td>
+                  <td>Pacing, stamina, form consistency.</td>
+                </tr>
+                <tr>
+                  <td><strong>Race Prep</strong></td>
+                  <td>Reliable starts/turns and confident race simulations.</td>
+                  <td>Execution, composure, and performance readiness.</td>
+                </tr>
               </tbody>
             </table>
-          </article>
-
-          <article class="faq-card">
-            <h2>On Deck &amp; Billing</h2>
-            <table aria-label="On deck and billing FAQ">
-              <thead>
-                <tr><th>Question</th><th>Answer</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Can parents watch lessons?</td><td>Yes, poolside and lobby viewing is available.</td></tr>
-                <tr><td>What should swimmers bring?</td><td>Swimsuit, towel, goggles, and any personal comfort gear approved by staff.</td></tr>
-                <tr><td>How is billing handled?</td><td>Billing is handled through your account portal with support from the front desk.</td></tr>
-                <tr><td>How do I get help quickly?</td><td>Contact the front desk by phone or email for immediate assistance.</td></tr>
-              </tbody>
-            </table>
-          </article>
+          </div>
         </div>
       </section>
     </main>

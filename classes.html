@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes | Jersey Aquatic Swim School</title>
+    <meta
+      name="description"
+      content="Explore Jersey Aquatic Swim School classes by age, skill level, and training focus."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --background: #ffffff;
+        --foreground: #1b3552;
+        --muted: #f3f9f9;
+        --muted-foreground: #4f6682;
+        --border: #e3ecf3;
+        --primary: #2dbcae;
+        --primary-dark: #219d91;
+        --secondary: #1b3552;
+        --secondary-foreground: #ffffff;
+        --container: 1160px;
+        --shadow: 0 4px 15px rgba(26, 46, 74, 0.05), 0 2px 6px rgba(26, 46, 74, 0.02);
+      }
+
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: "Plus Jakarta Sans", sans-serif; color: var(--foreground); background: var(--background); }
+      h1, h2, h3 { margin: 0; font-family: "Outfit", "Plus Jakarta Sans", sans-serif; letter-spacing: -0.02em; line-height: 1.1; }
+      p { margin: 0; }
+      .container { width: min(var(--container), calc(100% - 52px)); margin: 0 auto; }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        border-bottom: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+      }
+
+      .nav {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .brand-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        background: color-mix(in srgb, var(--primary) 16%, white);
+        color: var(--primary);
+      }
+
+      .brand-name {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: clamp(22px, 3vw, 30px);
+      }
+
+      .waves { width: 22px; height: 22px; }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--muted-foreground);
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .nav-links a:hover,
+      .nav-links a[aria-current='page'] {
+        color: var(--primary);
+      }
+
+      .nav-cta { display: flex; align-items: center; gap: 12px; }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        padding: 11px 18px;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        border: 1px solid transparent;
+      }
+
+      .btn-outline { color: var(--foreground); border-color: var(--border); background: #fff; }
+      .btn-primary { color: #fff; background: var(--primary); }
+      .btn-primary:hover { background: var(--primary-dark); }
+
+      .hero { padding: 54px 0 48px; }
+      .hero-shell { border-radius: 24px; background: var(--muted); padding: 40px; }
+      .hero h1 { font-size: clamp(42px, 6vw, 72px); margin-bottom: 12px; }
+      .hero p { color: var(--muted-foreground); font-size: 20px; max-width: 54ch; }
+
+      .section { padding: 72px 0; }
+      .section-header { max-width: 760px; margin: 0 auto 34px; text-align: center; }
+      .section-header h2 { font-size: clamp(34px, 4vw, 50px); margin-bottom: 10px; }
+      .section-header p { font-size: 18px; color: var(--muted-foreground); }
+
+      .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-bottom: 28px; }
+      .card { background: #fff; border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 24px; }
+      .card h3 { font-size: 26px; margin-bottom: 8px; }
+      .card p { color: var(--muted-foreground); }
+
+      .table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      table { width: 100%; border-collapse: collapse; min-width: 920px; }
+      th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+      th { background: #edf7fb; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+      tr:last-child td { border-bottom: 0; }
+
+      .footer {
+        background: var(--secondary);
+        color: rgba(255, 255, 255, 0.8);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 72px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 34px;
+        padding: 62px 0;
+      }
+
+      .footer h3 { font-size: 24px; margin-bottom: 14px; color: #fff; }
+      .footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 24px 0 30px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.52);
+        font-size: 14px;
+      }
+
+      @media (max-width: 1080px) {
+        .nav-links, .nav-cta .btn-outline { display: none; }
+        .card-grid, .footer-grid { grid-template-columns: 1fr; }
+      }
+
+      @media (max-width: 740px) {
+        .container { width: min(var(--container), calc(100% - 32px)); }
+        .hero-shell { padding: 24px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="Jersey Aquatic home">
+          <span class="brand-icon" aria-hidden="true">
+            <svg class="waves" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12c1.6 0 1.6 2 3.2 2s1.6-2 3.2-2 1.6 2 3.2 2 1.6-2 3.2-2 1.6 2 3.2 2 1.6-2 3.2-2" />
+            </svg>
+          </span>
+          <span class="brand-name">Jersey Aquatic</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="classes.html" aria-current="page">Classes</a>
+          <a href="progression.html">Progression</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+        <div class="nav-cta">
+          <a class="btn btn-outline" href="faq.html">Login</a>
+          <a class="btn btn-primary" href="classes.html">Free Lesson</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-shell">
+          <h1>Classes</h1>
+          <p>A structured class path for every age and level, with clear technique goals and measurable progress.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <header class="section-header">
+            <h2>Program Tracks</h2>
+            <p>One idea per class: safety, skill, consistency, then performance.</p>
+          </header>
+          <div class="card-grid">
+            <article class="card">
+              <h3>Foundations</h3>
+              <p>Turtle Tots and Minnows classes focus on comfort, breathing, and body control.</p>
+            </article>
+            <article class="card">
+              <h3>Technique</h3>
+              <p>Jellyfish and Sharks build stroke mechanics, timing, and efficient movement.</p>
+            </article>
+            <article class="card">
+              <h3>Competitive Prep</h3>
+              <p>Sea Otters and Swordfish introduce pace work, turns, and race readiness.</p>
+            </article>
+          </div>
+
+          <div class="table-wrap">
+            <table aria-label="Class overview">
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Approx Age</th>
+                  <th>Prerequisite</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Turtle Tots</strong></td>
+                  <td>Kindergarten &amp; Under</td>
+                  <td>No prerequisite</td>
+                  <td>Parent-assisted class covering comfort in water, bubble blowing, floating, and safe movement.</td>
+                </tr>
+                <tr>
+                  <td><strong>Minnows 1-2</strong></td>
+                  <td>Kindergarten &amp; Under</td>
+                  <td>Intro level</td>
+                  <td>Kicking, rotary breathing, foundational arm stroke patterns, and balanced body position.</td>
+                </tr>
+                <tr>
+                  <td><strong>Jellyfish 1-3</strong></td>
+                  <td>9 &amp; Under</td>
+                  <td>Basic comfort and propulsion</td>
+                  <td>Freestyle/backstroke development, breathing control, and intro endurance sets.</td>
+                </tr>
+                <tr>
+                  <td><strong>Sharks 1-3</strong></td>
+                  <td>9 &amp; Under</td>
+                  <td>Consistent freestyle/backstroke</td>
+                  <td>Stroke refinement, stronger kick integration, and confidence over longer repeats.</td>
+                </tr>
+                <tr>
+                  <td><strong>Sea Otters 1-3</strong></td>
+                  <td>10 &amp; Over</td>
+                  <td>Intermediate stroke control</td>
+                  <td>Technique consolidation with endurance progression and turn/breakout emphasis.</td>
+                </tr>
+                <tr>
+                  <td><strong>Swordfish</strong></td>
+                  <td>10 &amp; Over</td>
+                  <td>Advanced readiness</td>
+                  <td>Race prep, pace work, starts/turns, and transition toward competitive team expectations.</td>
+                </tr>
+                <tr>
+                  <td><strong>Adult Lessons</strong></td>
+                  <td>18+</td>
+                  <td>All levels welcome</td>
+                  <td>Beginner to advanced adult tracks for safety, confidence, and stroke efficiency.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <section>
+          <h3>Jersey Aquatic Swim School</h3>
+          <p>Real technique. Stronger swimmers. Ready for competition.</p>
+        </section>
+        <section>
+          <h3>Programs</h3>
+          <ul>
+            <li>Kindergarten &amp; Under</li>
+            <li>9 &amp; Under</li>
+            <li>10 &amp; Over</li>
+            <li>Adults</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Contact</h3>
+          <ul>
+            <li>(555) 123-4567</li>
+            <li>hello@jerseyaquatic.com</li>
+          </ul>
+        </section>
+      </div>
+      <div class="container footer-bottom">&copy; 2026 Jersey Aquatic Swim School. All rights reserved.</div>
+    </footer>
+  </body>
+</html>
