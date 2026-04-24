@@ -76,11 +76,27 @@
 
       .faq-card h2 { font-size: 32px; margin-bottom: 16px; }
 
-      table { width: 100%; border-collapse: collapse; }
-      th, td { text-align: left; padding: 14px 0; border-bottom: 1px solid var(--border); vertical-align: top; }
-      th { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted-foreground); }
-      td:first-child { width: 34%; font-weight: 600; padding-right: 16px; }
-      tr:last-child td { border-bottom: 0; }
+      .faq-list { display: grid; gap: 14px; }
+      .faq-item {
+        border-top: 1px solid var(--border);
+        padding-top: 14px;
+      }
+      .faq-item:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+      .faq-item h3 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.35;
+        letter-spacing: 0;
+        margin-bottom: 6px;
+      }
+      .faq-item p {
+        color: var(--muted-foreground);
+        line-height: 1.65;
+      }
 
       .footer {
         background: var(--secondary);
@@ -97,14 +113,11 @@
       @media (max-width: 1080px) {
         .nav-links, .nav-cta .btn-outline { display: none; }
         .footer-grid { grid-template-columns: 1fr; }
-        td:first-child { width: 42%; }
       }
 
       @media (max-width: 740px) {
         .container { width: min(var(--container), calc(100% - 32px)); }
         .hero-shell { padding: 24px; }
-        td:first-child { width: 100%; display: block; padding-bottom: 8px; }
-        td:last-child { display: block; }
       }
     </style>
   </head>
@@ -125,8 +138,8 @@
           <a href="faq.html" aria-current="page">FAQ</a>
         </nav>
         <div class="nav-cta">
-          <a class="btn btn-outline" href="faq.html">Login</a>
-          <a class="btn btn-primary" href="classes.html">Free Lesson</a>
+          <a class="btn btn-outline" href="https://portal.iclasspro.com/jerseyaquaticcenter/login?showLogin=1">Login</a>
+          <a class="btn btn-primary" href="https://portal.iclasspro.com/jerseyaquaticcenter/classes">Free Lesson</a>
         </div>
       </div>
     </header>
@@ -143,47 +156,68 @@
         <div class="container faq-grid">
           <article class="faq-card">
             <h2>Programs &amp; Placement</h2>
-            <table aria-label="Programs and placement FAQ">
-              <thead>
-                <tr><th>Question</th><th>Answer</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>What ages do you teach?</td><td>From 6 months through adults, with level-based tracks.</td></tr>
-                <tr><td>How do I pick the right level?</td><td>Start with a free level assessment and coach recommendation.</td></tr>
-                <tr><td>Do you offer trial classes?</td><td>Yes, one free trial class is available for new swimmers.</td></tr>
-                <tr><td>Are private lessons available?</td><td>Yes, private and semi-private options are offered based on schedule availability.</td></tr>
-              </tbody>
-            </table>
+            <div class="faq-list" aria-label="Programs and placement FAQ">
+              <div class="faq-item">
+                <h3>What ages do you teach?</h3>
+                <p>From 6 months through adults, with level-based tracks.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How do I pick the right level?</h3>
+                <p>Start with a free level assessment and coach recommendation.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Do you offer trial classes?</h3>
+                <p>Yes, one free trial class is available for new swimmers.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Are private lessons available?</h3>
+                <p>Yes, private and semi-private options are offered based on schedule availability.</p>
+              </div>
+            </div>
           </article>
 
           <article class="faq-card">
             <h2>Scheduling &amp; Enrollment</h2>
-            <table aria-label="Scheduling and enrollment FAQ">
-              <thead>
-                <tr><th>Question</th><th>Answer</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>How long are lessons?</td><td>Most group lessons are 30 minutes; select clinic tracks are longer.</td></tr>
-                <tr><td>Can I join mid-session?</td><td>Yes, rolling enrollment is available with prorated billing when applicable.</td></tr>
-                <tr><td>Can we switch levels or times?</td><td>Yes, transfers can be requested and are confirmed based on availability and level fit.</td></tr>
-                <tr><td>What if the facility closes?</td><td>Affected lessons are credited or made up according to center policy.</td></tr>
-              </tbody>
-            </table>
+            <div class="faq-list" aria-label="Scheduling and enrollment FAQ">
+              <div class="faq-item">
+                <h3>How long are lessons?</h3>
+                <p>Most group lessons are 30 minutes; select clinic tracks are longer.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I join mid-session?</h3>
+                <p>Yes, rolling enrollment is available with prorated billing when applicable.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can we switch levels or times?</h3>
+                <p>Yes, transfers can be requested and are confirmed based on availability and level fit.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What if the facility closes?</h3>
+                <p>Affected lessons are credited or made up according to center policy.</p>
+              </div>
+            </div>
           </article>
 
           <article class="faq-card">
             <h2>On Deck &amp; Billing</h2>
-            <table aria-label="On deck and billing FAQ">
-              <thead>
-                <tr><th>Question</th><th>Answer</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Can parents watch lessons?</td><td>Yes, poolside and lobby viewing is available.</td></tr>
-                <tr><td>What should swimmers bring?</td><td>Swimsuit, towel, goggles, and any personal comfort gear approved by staff.</td></tr>
-                <tr><td>How is billing handled?</td><td>Billing is handled through your account portal with support from the front desk.</td></tr>
-                <tr><td>How do I get help quickly?</td><td>Contact the front desk by phone or email for immediate assistance.</td></tr>
-              </tbody>
-            </table>
+            <div class="faq-list" aria-label="On deck and billing FAQ">
+              <div class="faq-item">
+                <h3>Can parents watch lessons?</h3>
+                <p>Yes, poolside and lobby viewing is available.</p>
+              </div>
+              <div class="faq-item">
+                <h3>What should swimmers bring?</h3>
+                <p>Swimsuit, towel, goggles, and any personal comfort gear approved by staff.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How is billing handled?</h3>
+                <p>Billing is handled through your account portal with support from the front desk.</p>
+              </div>
+              <div class="faq-item">
+                <h3>How do I get help quickly?</h3>
+                <p>Contact the front desk by phone or email for immediate assistance.</p>
+              </div>
+            </div>
           </article>
         </div>
       </section>
@@ -207,8 +241,9 @@
         <section>
           <h3>Contact</h3>
           <ul>
-            <li>(555) 123-4567</li>
-            <li>hello@jerseyaquatic.com</li>
+            <li>629 Central Ave<br />New Providence, New Jersey 07974</li>
+            <li>(973) 487-6954</li>
+            <li>info@jerseyaquaticcenter.com</li>
           </ul>
         </section>
       </div>
