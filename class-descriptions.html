@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Descriptions | Jersey Aquatic Swim School</title>
+    <meta
+      name="description"
+      content="Detailed class descriptions for Jersey Aquatic Swim School, including age groups, prerequisites, and private lesson options."
+    />
+    <style>
+      :root {
+        --navy: #102b47;
+        --navy-soft: #27435d;
+        --teal: #64d2c6;
+        --teal-deep: #3cbeb1;
+        --bg-soft: #f5f8f9;
+        --line: #d8e3ea;
+        --text-muted: #5f6f7f;
+        --container: 1120px;
+        --radius-md: 16px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        color: var(--navy);
+        background: #fff;
+      }
+
+      .container {
+        width: min(var(--container), calc(100% - 52px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        padding: 18px 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .brand-mark {
+        width: 68px;
+        height: 44px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 20% 80%, var(--teal) 0 32%, transparent 34%),
+          linear-gradient(160deg, #173451 15%, #0f2a45 60%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .brand-mark::after {
+        content: "";
+        position: absolute;
+        inset: 17px -4px 8px 18px;
+        border-radius: 999px;
+        background: #fff;
+        opacity: 0.9;
+        transform: rotate(-9deg);
+      }
+
+      .brand-copy {
+        line-height: 1;
+      }
+
+      .brand-copy strong {
+        display: block;
+        font-size: clamp(20px, 2.6vw, 28px);
+        letter-spacing: 0.02em;
+        font-weight: 800;
+      }
+
+      .brand-copy span {
+        display: block;
+        margin-top: 6px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--teal-deep);
+        font-size: clamp(12px, 1.4vw, 16px);
+        font-weight: 700;
+      }
+
+      .top-nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .top-nav a {
+        text-decoration: none;
+        color: var(--navy);
+        background: #eef6fb;
+        border: 1px solid #cde0ed;
+        border-radius: 999px;
+        padding: 10px 18px;
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .top-nav a:hover,
+      .top-nav a:focus-visible,
+      .top-nav a[aria-current='page'] {
+        background: var(--teal);
+        border-color: var(--teal-deep);
+      }
+
+      .hero {
+        background: var(--bg-soft);
+        border-radius: 24px;
+        padding: 34px 30px;
+        margin: 10px 0 28px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(36px, 5vw, 56px);
+        line-height: 1.05;
+      }
+
+      .hero p {
+        margin: 14px 0 0;
+        color: var(--text-muted);
+        font-size: 20px;
+        max-width: 70ch;
+      }
+
+      .section-title {
+        margin: 44px 0 16px;
+        font-size: clamp(28px, 3.5vw, 38px);
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 900px;
+        background: #fff;
+      }
+
+      th,
+      td {
+        text-align: left;
+        vertical-align: top;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      th {
+        background: #edf7fb;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .level {
+        font-weight: 700;
+        color: var(--navy-soft);
+      }
+
+      .private-card {
+        margin-top: 26px;
+        background: #e8f7f4;
+        border: 1px solid #cdece7;
+        border-radius: var(--radius-md);
+        padding: 22px;
+      }
+
+      .private-card h3 {
+        margin: 0 0 12px;
+        font-size: 28px;
+      }
+
+      .private-card ul {
+        margin: 0;
+        padding-left: 22px;
+        color: var(--navy-soft);
+      }
+
+      .footer {
+        padding: 34px 0;
+        text-align: center;
+        color: #6d8192;
+      }
+
+      @media (max-width: 760px) {
+        .container {
+          width: min(var(--container), calc(100% - 32px));
+        }
+
+        .site-header,
+        .top-nav {
+          justify-content: center;
+        }
+
+        .hero {
+          padding: 24px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header container">
+      <a class="brand" href="index.html" aria-label="Jersey Aquatic Swim School home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-copy">
+          <strong>JERSEY AQUATIC</strong>
+          <span>Swim School</span>
+        </span>
+      </a>
+      <nav class="top-nav" aria-label="Top navigation">
+        <a href="index.html#stories">Book a Class Now</a>
+        <a href="class-descriptions.html" aria-current="page">Class Descriptions</a>
+        <a href="faq.html">FAQs</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Class Descriptions</h1>
+        <p>
+          Find the best fit by age, experience, and current skills. Every class focuses on water safety,
+          confidence, strong technique, and measurable progress.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="section-title">Group Lesson Levels</h2>
+        <div class="table-wrap">
+          <table aria-label="Jersey Aquatic class descriptions">
+            <thead>
+              <tr>
+                <th>Group</th>
+                <th>Class</th>
+                <th>Age</th>
+                <th>Prerequisite</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="level">Kindergarten &amp; Under</td>
+                <td>Turtle Tots</td>
+                <td>6 months-2 years</td>
+                <td>No prerequisite</td>
+                <td>
+                  Parent and child experience an active 30-minute, instructor-guided class. Focus areas include comfort
+                  on and under water, bubble blowing, floating, body position, balance, and propulsive kicks.
+                </td>
+              </tr>
+              <tr>
+                <td class="level">Kindergarten &amp; Under</td>
+                <td>Minnows 1</td>
+                <td>3-K</td>
+                <td>No prerequisite</td>
+                <td>
+                  For students new to water who have not fully submerged or cannot kick on their back 50 feet using a
+                  propulsive kick. Includes kicking front/back, sculling, rotary breathing, and arm strokes.
+                </td>
+              </tr>
+              <tr>
+                <td class="level">Kindergarten &amp; Under</td>
+                <td>Minnows 2</td>
+                <td>3-K</td>
+                <td>Comfortable in water, face in, and kicking on back</td>
+                <td>
+                  Students pass Minnows 1 skills and continue with stronger flutter kicks (front/back), bilateral
+                  breathing, breaststroke kicking, and drills for balanced body position.
+                </td>
+              </tr>
+              <tr>
+                <td class="level">Kindergarten &amp; Under</td>
+                <td>Minnows 3</td>
+                <td>3-K</td>
+                <td>Freestyle and backstroke</td>
+                <td>
+                  For swimmers already performing freestyle with propulsive kicks and bilateral breathing. Adds
+                  elementary backstroke, somersaults, and drills for breaststroke and butterfly.
+                </td>
+              </tr>
+              <tr>
+                <td class="level">9 &amp; Under</td>
+                <td>Jellyfish 1</td>
+                <td>1st grade-9 years</td>
+                <td>No prerequisite</td>
+                <td>
+                  For students new to water who have not fully submerged or cannot kick on their back 50 feet using a
+                  propulsive kick. Includes kicking front/back, sculling, rotary breathing, and arm strokes.
+                </td>
+              </tr>
+              <tr>
+                <td class="level">9 &amp; Under</td>
+                <td>Jellyfish 2</td>
+                <td>1st grade-9 years</td>
+                <td>Comfortable kicking/sculling on back and rotary breathing on front</td>
+                <td>
+                  Students pass Jellyfish 1 skills. Focus on strong propulsive flutter kicks, bilateral breathing,
+                  breaststroke kicking, and drills for balanced body position.
+                </td>
+              </tr>
+              <tr>
+                <td class="level">9 &amp; Under</td>
+                <td>Jellyfish 3</td>
+                <td>1st grade-9 years</td>
+                <td>Freestyle and backstroke</td>
+                <td>
+                  For swimmers already performing freestyle with propulsive kicks and bilateral breathing. Adds
+                  elementary backstroke, somersaults, and drills for breaststroke and butterfly.
+                </td>
+              </tr>
+              <tr>
+                <td class="level">9 &amp; Under</td>
+                <td>Sharks</td>
+                <td>9 &amp; under</td>
+                <td>
+                  Strong/proper freestyle and backstroke, legal breaststroke kick and dolphin kick for 200 feet each
+                  without stopping
+                </td>
+                <td>
+                  Activities include coordinating breaststroke and butterfly, flip turns, open turns, breakouts, and
+                  drills for strength and endurance.
+                </td>
+              </tr>
+              <tr>
+                <td class="level">10 &amp; Over</td>
+                <td>Sea Otters 1</td>
+                <td>10 &amp; over</td>
+                <td>No prerequisite</td>
+                <td>
+                  Students may be new to water or still learning breath control, balance, and propulsive kicks.
+                  Includes kicking front/back, sculling, bilateral breathing, arm strokes, elementary backstroke, and
+                  drills for balanced body position.
+                </td>
+              </tr>
+              <tr>
+                <td class="level">10 &amp; Over</td>
+                <td>Sea Otters 2</td>
+                <td>10 &amp; over</td>
+                <td>Freestyle and backstroke</td>
+                <td>
+                  For swimmers already doing freestyle with propulsive kicks and bilateral breathing. Adds breaststroke
+                  kicking, dolphin kicking, somersaults, and refinement of backstroke and freestyle.
+                </td>
+              </tr>
+              <tr>
+                <td class="level">10 &amp; Over</td>
+                <td>Swordfish</td>
+                <td>10 &amp; over</td>
+                <td>
+                  Strong/proper freestyle and backstroke, legal breaststroke kick and dolphin kick for 200 feet each
+                  without stopping
+                </td>
+                <td>
+                  Activities include coordinating breaststroke and butterfly, flip turns, open turns, breakouts, and
+                  drills for strength and endurance.
+                </td>
+              </tr>
+              <tr>
+                <td class="level">Adults</td>
+                <td>Adult Levels</td>
+                <td>15+</td>
+                <td>Any level welcome</td>
+                <td>
+                  Activities focus on body position, breathing, and kicking, which lead into stroke building and
+                  refinement.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="private-card" aria-label="Private and semi-private lesson options">
+        <h3>Private &amp; Semi-Private Lessons</h3>
+        <ul>
+          <li><strong>Private Lessons:</strong> One-on-one coaching with a customized plan built around the swimmer's goals.</li>
+          <li><strong>Semi-Private Lessons:</strong> Two swimmers with similar level/goals trained together with focused instruction.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer container">© 2026 Jersey Aquatic Swim School. All rights reserved.</footer>
+  </body>
+</html>
