@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ | Jersey Aquatic Swim School</title>
+    <title>About | Jersey Aquatic Swim School</title>
     <meta
       name="description"
-      content="Frequently asked questions about Jersey Aquatic Swim School programs, scheduling, and enrollment."
+      content="About Jersey Aquatic Center, its mission, and its commitment to swimmers and families in New Providence."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,7 +22,6 @@
         --muted-foreground: #4f6682;
         --border: #e3ecf3;
         --primary: #2dbcae;
-        --primary-dark: #219d91;
         --secondary: #1b3552;
         --container: 1160px;
         --shadow: 0 4px 15px rgba(26, 46, 74, 0.05), 0 2px 6px rgba(26, 46, 74, 0.02);
@@ -59,45 +58,39 @@
       .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 12px; padding: 11px 18px; font-size: 14px; font-weight: 700; text-decoration: none; border: 1px solid transparent; }
       .btn-outline { color: var(--foreground); border-color: var(--border); background: #fff; }
       .btn-primary { color: #fff; background: var(--primary); }
-      .btn-primary:hover { background: var(--primary-dark); }
 
-      .hero { padding: 54px 0 44px; }
-      .hero-shell { border-radius: 24px; background: var(--muted); padding: 40px; }
-      .hero h1 { font-size: clamp(42px, 6vw, 72px); margin-bottom: 12px; }
-      .hero p { color: var(--muted-foreground); font-size: 20px; max-width: 58ch; }
-
-      .section { padding: 20px 0 60px; }
-      .faq-grid { display: grid; gap: 18px; }
-      .faq-card {
+      .section { padding: 56px 0 70px; }
+      .simple-about {
+        max-width: 860px;
+        margin: 0 auto;
         background: #fff;
         border: 1px solid var(--border);
-        border-radius: 16px;
+        border-radius: 14px;
         box-shadow: var(--shadow);
-        padding: 22px;
+        overflow: hidden;
       }
 
-      .faq-card h2 { font-size: 32px; margin-bottom: 16px; }
+      .simple-about img {
+        width: 100%;
+        height: clamp(260px, 36vw, 460px);
+        object-fit: cover;
+        display: block;
+      }
 
-      .faq-list { display: grid; gap: 14px; }
-      .faq-item {
-        border-top: 1px solid var(--border);
-        padding-top: 14px;
+      .simple-about .content {
+        padding: 28px;
       }
-      .faq-item:first-child {
-        border-top: 0;
-        padding-top: 0;
+
+      .simple-about h1 {
+        font-size: clamp(34px, 4.5vw, 54px);
+        margin-bottom: 16px;
       }
-      .faq-item h3 {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 1.35;
-        letter-spacing: 0;
-        margin-bottom: 6px;
-      }
-      .faq-item p {
+
+      .simple-about p {
         color: var(--muted-foreground);
-        line-height: 1.65;
+        line-height: 1.85;
+        font-size: 18px;
+        white-space: pre-line;
       }
 
       .footer {
@@ -119,7 +112,8 @@
 
       @media (max-width: 740px) {
         .container { width: min(var(--container), calc(100% - 32px)); }
-        .hero-shell { padding: 24px; }
+        .simple-about .content { padding: 22px; }
+        .simple-about p { font-size: 17px; }
       }
     </style>
   </head>
@@ -140,8 +134,8 @@
         <nav class="nav-links" aria-label="Primary navigation">
           <a href="classes.html">Classes</a>
           <a href="progression.html">Progression</a>
-          <a href="about.html">About</a>
-          <a href="faq.html" aria-current="page">FAQ</a>
+          <a href="about.html" aria-current="page">About</a>
+          <a href="faq.html">FAQ</a>
         </nav>
         <div class="nav-cta">
           <a class="btn btn-outline" href="https://portal.iclasspro.com/jerseyaquaticcenter/login?showLogin=1">Login</a>
@@ -151,78 +145,23 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div class="container hero-shell">
-          <h1>Frequently Asked Questions</h1>
-          <p>Quick answers about classes, enrollment, scheduling, makeups, and billing.</p>
-        </div>
-      </section>
-
       <section class="section">
-        <div class="container faq-grid">
-          <article class="faq-card">
-            <h2>Programs &amp; Placement</h2>
-            <div class="faq-list" aria-label="Programs and placement FAQ">
-              <div class="faq-item">
-                <h3>What ages do you teach?</h3>
-                <p>From 6 months through adults, with level-based tracks.</p>
-              </div>
-              <div class="faq-item">
-                <h3>How do I pick the right level?</h3>
-                <p>Start with a free level assessment and coach recommendation.</p>
-              </div>
-              <div class="faq-item">
-                <h3>Do you offer trial classes?</h3>
-                <p>Yes, one free trial class is available for new swimmers.</p>
-              </div>
-              <div class="faq-item">
-                <h3>Are private lessons available?</h3>
-                <p>Yes, private and semi-private options are offered based on schedule availability.</p>
-              </div>
-            </div>
-          </article>
+        <div class="container">
+          <article class="simple-about">
+            <img src="pool.png" alt="Jersey Aquatic Center pool" />
+            <div class="content">
+              <h1>About Jersey Aquatic Center</h1>
+              <p>Jersey Aquatic Swim School was built around a simple belief: swim lessons should shape a child's life, not just their stroke.
 
-          <article class="faq-card">
-            <h2>Scheduling &amp; Enrollment</h2>
-            <div class="faq-list" aria-label="Scheduling and enrollment FAQ">
-              <div class="faq-item">
-                <h3>How long are lessons?</h3>
-                <p>Most group lessons are 30 minutes; select clinic tracks are longer.</p>
-              </div>
-              <div class="faq-item">
-                <h3>Can I join mid-session?</h3>
-                <p>Yes, rolling enrollment is available with prorated billing when applicable.</p>
-              </div>
-              <div class="faq-item">
-                <h3>Can we switch levels or times?</h3>
-                <p>Yes, transfers can be requested and are confirmed based on availability and level fit.</p>
-              </div>
-              <div class="faq-item">
-                <h3>What if the facility closes?</h3>
-                <p>Affected lessons are credited or made up according to center policy.</p>
-              </div>
-            </div>
-          </article>
+Our families saw that firsthand. Our kids grew up swimming for Jim Wood, and the experience changed them in lasting ways. Jim taught technique, discipline, and race preparation, but he also taught the habits that matter outside the pool: showing up, staying accountable, handling pressure, and supporting teammates.
 
-          <article class="faq-card">
-            <h2>On Deck &amp; Billing</h2>
-            <div class="faq-list" aria-label="On deck and billing FAQ">
-              <div class="faq-item">
-                <h3>Can parents watch lessons?</h3>
-                <p>Yes, poolside and lobby viewing is available.</p>
-              </div>
-              <div class="faq-item">
-                <h3>What should swimmers bring?</h3>
-                <p>Swimsuit, towel, goggles, and any personal comfort gear approved by staff.</p>
-              </div>
-              <div class="faq-item">
-                <h3>How is billing handled?</h3>
-                <p>Billing is handled through your account portal with support from the front desk.</p>
-              </div>
-              <div class="faq-item">
-                <h3>How do I get help quickly?</h3>
-                <p>Contact the front desk by phone or email for immediate assistance.</p>
-              </div>
+As Jim said, "A coach's main job is not to take young athletes and create great swimmers, but to take young athletes and create great adults."
+
+That mission is still the foundation of our swim school today. Every level, from early water confidence to advanced training, is designed to help swimmers progress with patience, structure, and pride.
+
+The Jersey Aquatic Center gives us the space to do that well, with four dedicated pools: an Olympic-sized competition pool, a smaller training pool, a teaching pool for swim school, and an aquatherapy pool for those with health needs, plus an extensive weight training room.
+
+We remain deeply grateful for Jim's influence and committed to carrying it forward for children across New Providence through the values written on the bottom of our pool: Pride, Courage, Humility, Respect, Commitment, Integrity, Accountability, and Perseverance.</p>
             </div>
           </article>
         </div>

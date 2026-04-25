@@ -105,9 +105,24 @@
       }
 
       .brand-name {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 4px;
+        line-height: 1;
+      }
+
+      .brand-title {
         font-family: "Outfit", sans-serif;
         font-weight: 700;
         font-size: clamp(22px, 3vw, 30px);
+      }
+
+      .brand-subtitle {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 600;
+        font-size: clamp(13px, 1.6vw, 18px);
+        color: var(--primary);
+        margin-left: 2px;
       }
 
       .waves {
@@ -662,11 +677,15 @@
               <path d="M2 12c1.6 0 1.6 2 3.2 2s1.6-2 3.2-2 1.6 2 3.2 2 1.6-2 3.2-2 1.6 2 3.2 2 1.6-2 3.2-2" />
             </svg>
           </span>
-          <span class="brand-name">Jersey Aquatic Swim School</span>
+          <span class="brand-name">
+            <span class="brand-title">Jersey Aquatic</span>
+            <span class="brand-subtitle">Swim School</span>
+          </span>
         </a>
         <nav class="nav-links" aria-label="Primary navigation">
           <a href="classes.html">Classes</a>
           <a href="progression.html">Progression</a>
+          <a href="about.html">About</a>
           <a href="faq.html">FAQ</a>
         </nav>
         <div class="nav-cta">
