@@ -265,6 +265,25 @@
 
       .hero {
         padding: 62px 0 104px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -18px;
+        right: -24px;
+        width: min(44vw, 480px);
+        aspect-ratio: 420 / 260;
+        background: url("turtle-bg.svg") no-repeat center / contain;
+        opacity: 0.12;
+        pointer-events: none;
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 1;
       }
 
       .hero-grid {
@@ -313,6 +332,23 @@
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
+      }
+
+      .hero-actions .btn-primary {
+        position: relative;
+      }
+
+      .hero-actions .btn-primary::before {
+        content: "";
+        position: absolute;
+        right: calc(100% + 18px);
+        top: 50%;
+        transform: translateY(-50%) scaleX(-1) rotate(-8deg);
+        width: clamp(220px, 26vw, 340px);
+        aspect-ratio: 360 / 220;
+        background: url("fish-bg.svg") no-repeat center / contain;
+        opacity: 0.12;
+        pointer-events: none;
       }
 
       .hero-actions .btn {
@@ -664,6 +700,10 @@
 
         .hero-actions .btn {
           width: 100%;
+        }
+
+        .hero-actions .btn-primary::before {
+          display: none;
         }
       }
     </style>
