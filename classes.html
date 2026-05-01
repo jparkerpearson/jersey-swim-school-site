@@ -157,6 +157,22 @@
       th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
       th { background: #edf7fb; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
       tr:last-child td { border-bottom: 0; }
+      tbody td:first-child { white-space: nowrap; }
+
+      .classes-gallery {
+        margin-top: 32px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background: #fff;
+      }
+
+      .classes-gallery img {
+        width: 100%;
+        display: block;
+        height: auto;
+      }
 
       .footer {
         background: var(--secondary);
@@ -307,6 +323,10 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          <div class="classes-gallery">
+            <img src="pool.png" alt="Jersey Aquatic Center pool mural and lanes" />
           </div>
         </div>
       </section>
