@@ -153,6 +153,7 @@
       .hero-shell { border-radius: 24px; background: var(--muted); padding: 40px; }
       .hero h1 { font-size: clamp(42px, 6vw, 72px); margin-bottom: 12px; }
       .hero p { color: var(--muted-foreground); font-size: 20px; max-width: 54ch; }
+      .hero-tagline { white-space: nowrap; }
       .hero-actions { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px; }
 
       .section { padding: 72px 0; }
@@ -179,6 +180,21 @@
       tr:last-child td { border-bottom: 0; }
       tbody td:first-child { white-space: nowrap; }
 
+
+      .contact-bubble {
+        margin-top: 18px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 12px 18px;
+        color: var(--muted-foreground);
+        box-shadow: var(--shadow);
+      }
+
+      .contact-bubble a {
+        color: var(--primary);
+        font-weight: 600;
+      }
       .classes-gallery {
         margin-top: 32px;
         border: 1px solid var(--border);
@@ -261,7 +277,7 @@
       <section class="hero">
         <div class="container hero-shell">
           <h1>Classes</h1>
-          <p>A structured class path for every age and level, with clear technique goals and measurable progress.</p>
+          <p><span class="hero-tagline">A structured class path for every age and level, with clear technique goals and measurable progress.</span></p>
           <div class="hero-actions">
             <a class="btn btn-outline" href="https://portal.iclasspro.com/jerseyaquaticcenter/login?showLogin=1">Manage Your Classes</a>
           </div>
@@ -276,15 +292,15 @@
           </header>
           <div class="card-grid">
             <article class="card">
-              <h3>Foundations</h3>
+              <h3>🛟 Foundations</h3>
               <p>Turtle Tots and Minnows classes focus on comfort, breathing, and body control.</p>
             </article>
             <article class="card">
-              <h3>Technique</h3>
+              <h3>🏊 Technique</h3>
               <p>Jellyfish and Sharks build stroke mechanics, timing, and efficient movement.</p>
             </article>
             <article class="card">
-              <h3>Competitive Prep</h3>
+              <h3>🏁 Competitive Prep</h3>
               <p>Sea Otters and Swordfish introduce pace work, turns, and race readiness.</p>
             </article>
           </div>
@@ -345,6 +361,10 @@
               </tbody>
             </table>
           </div>
+
+          <aside class="contact-bubble" aria-label="Questions and contact details">
+            Questions? See <a href="faq.html">FAQ</a> or contact us via phone <a href="tel:9734876954">(973) 487-6954</a> or email us at <a href="mailto:info@jerseyaquaticcenter.com">info@jerseyaquaticcenter.com</a>.
+          </aside>
 
           <div class="classes-gallery">
             <img src="pool.png" alt="Jersey Aquatic Center pool mural and lanes" />
